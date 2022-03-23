@@ -5,7 +5,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.*;
 
 @Entity
 @Table(name = "tbl_sugang")
@@ -35,4 +35,7 @@ public class Sugang extends BaseEntity {
 
     @Column(columnDefinition = "DATETIME")
     private Date endDate;
+
+    @OneToMany(mappedBy = "sugang")
+    private Set<SugangRequest> sugangRequests = new HashSet<>();
 }
