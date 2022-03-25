@@ -36,6 +36,9 @@ public class Sugang extends BaseEntity {
     @Column(columnDefinition = "DATETIME")
     private Date endDate;
 
+    @Column
+    private String createdTeacher;
+
     @OneToMany(mappedBy = "sugang")
     private Set<SugangRequest> sugangRequests = new HashSet<>();
 }
