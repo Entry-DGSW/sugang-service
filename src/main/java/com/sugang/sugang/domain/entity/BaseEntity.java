@@ -4,12 +4,12 @@ import lombok.Getter;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @MappedSuperclass
 public class BaseEntity {
 
     @Column(columnDefinition = "DATETIME", nullable = false)
-    private Date createdAt;
+    private LocalDateTime createdAt;
 }
