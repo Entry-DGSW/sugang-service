@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class SugangController {
 
-    private final AddSugangService addSugangService;
     private final SugangFacade sugangFacade;
 
     @PostMapping
