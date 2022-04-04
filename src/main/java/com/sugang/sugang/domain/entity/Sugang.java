@@ -1,5 +1,6 @@
 package com.sugang.sugang.domain.entity;
 
+import com.sugang.sugang.controller.dto.ModifySugangDto;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -41,4 +42,14 @@ public class Sugang extends BaseEntity {
 
     @OneToMany(mappedBy = "sugang")
     private Set<SugangRequest> sugangRequests = new HashSet<>();
+
+    public Sugang update(ModifySugangDto.Request request) {
+        this.chargeTeacher = request.getChargeTeacher();
+        this.name = request.getName();
+        this.content = request.getContent();
+        this.startDate = request.getStartDate();
+        this.endDate = request.getEndDate();
+
+        return this;
+    }
 }
