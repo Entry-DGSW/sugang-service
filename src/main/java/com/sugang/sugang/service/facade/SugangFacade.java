@@ -1,7 +1,6 @@
 package com.sugang.sugang.service.facade;
 
-import com.sugang.sugang.controller.dto.AddSugangDto;
-import com.sugang.sugang.controller.dto.ModifySugangDto;
+import com.sugang.sugang.controller.dto.*;
 
 public interface SugangFacade {
 
@@ -10,4 +9,6 @@ public interface SugangFacade {
     void deleteSugang(Long sugangId);
 
     void modifySugang(Long sugangId, ModifySugangDto.Request request);
+
+    FindSugangDto.Response findSugangById(Long sugangId);
 }
