@@ -1,7 +1,6 @@
 package com.sugang.sugang.controller;
 
-import com.sugang.sugang.controller.dto.AddSugangDto;
-import com.sugang.sugang.controller.dto.ModifySugangDto;
+import com.sugang.sugang.controller.dto.*;
 import com.sugang.sugang.service.facade.SugangFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -36,5 +35,12 @@ public class SugangController {
     ) {
         sugangFacade.modifySugang(sugangId, request);
         return ResponseEntity.ok("강의 수정 성공");
+    }
+
+    @GetMapping("/{sugangId}")
+    public ResponseEntity<FindSugangDto.Response> getSugangInfo(
+            @PathVariable("sugangId") Long sugangId
+    ) {
+        return ResponseEntity.ok(sugangFacade.findSugangById(sugangId));
     }
 }
