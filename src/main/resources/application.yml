@@ -1,5 +1,17 @@
 server:
-  port: 8082
+  port: 8083
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    root: WARN
+    com.sugang.sugang: DEBUG
+
 
 spring:
   application:
