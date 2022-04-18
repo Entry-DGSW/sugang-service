@@ -12,10 +12,9 @@ logging:
     root: WARN
     com.sugang.sugang: DEBUG
 
-
 spring:
   application:
-    name: user-service
+    name: sugang-service
 
   jpa:
     show-sql: true
